@@ -2,6 +2,7 @@ package org.example.ecosystem;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Optional;
 
 public class PersonRepository {
     private ArrayList<Person> persons;
@@ -49,6 +50,15 @@ public class PersonRepository {
             }
         }
         return personWithSameFavoriteDay;
+    }
+
+    public Optional<Person> getPersonById(int id){
+        for (Person person : persons) {
+            if(person.id() == id){
+                return Optional.of(person);
+            }
+        }
+        return Optional.empty();
     }
 
     //Boiler Plate Code
