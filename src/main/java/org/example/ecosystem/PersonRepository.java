@@ -61,6 +61,15 @@ public class PersonRepository {
         return Optional.empty();
     }
 
+    public Optional<Person> getPersonByName(String name){
+        for (Person person : persons) {
+            if(person.name().equals(name)){
+                return Optional.of(person);
+            }
+        }
+        return Optional.empty();
+    }
+
     //Boiler Plate Code
     @Override
     public boolean equals(Object o) {
