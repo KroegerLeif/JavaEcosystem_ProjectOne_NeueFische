@@ -1,4 +1,4 @@
-package org.example.enumPackage;
+package org.example.ecosystem;
 
 import java.util.ArrayList;
 import java.util.Objects;

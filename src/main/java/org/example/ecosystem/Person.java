@@ -1,4 +1,4 @@
-package org.example.enumPackage;
+package org.example.ecosystem;
 
 public record Person(
         int id,
