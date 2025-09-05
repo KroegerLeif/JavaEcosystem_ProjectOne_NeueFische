@@ -31,10 +31,17 @@ public class Main {
         personRepository.addPerson(person7);
         personRepository.addPerson(person8);
 
+        System.out.println("Find Person by Id:");
+
         printPersons(personRepository, 12);
         printPersons(personRepository, 9);
         printPersons(personRepository, 13);
 
+        System.out.println("Find Person by Name:");
+
+        printPesonFoundByName(personRepository, "John");
+        printPesonFoundByName(personRepository, "Leif");
+        printPesonFoundByName(personRepository, "Pauline");
 
 
     }
@@ -48,4 +55,16 @@ public class Main {
             System.out.println("No person found");
         }
     }
+
+    private static void printPesonFoundByName(PersonRepository personRepository, String name){
+        Optional<Person> personOptioanl = personRepository.getPersonByName(name);
+        if(personOptioanl.isPresent()){
+            System.out.println("Name: " + personOptioanl.get().name());
+            System.out.println("Lieblings Tag: " + personOptioanl.get().favoriteDay());
+        }else{
+            System.out.println("No person found with that name: " + name);
+        }
+    }
+
+
 }
