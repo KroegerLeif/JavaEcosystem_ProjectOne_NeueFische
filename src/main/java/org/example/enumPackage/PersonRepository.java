@@ -19,18 +19,18 @@ public class PersonRepository {
     }
 
     public int[] countPersonProGender(){
-        int[] result = new int[3];
+        int[] countByGender = new int[3];
         //Counts how many people are male, female and other
         for (Person person : persons) {
             switch(person.gender()){
                 case MALE:
-                    result[0]++;
+                    countByGender[0]++;
                     break;
                 case FEMALE:
-                    result[1]++;
+                    countByGender[1]++;
                     break;
                 case OTHER:
-                    result[2]++;
+                    countByGender[2]++;
                     break;
                 default:
                     //Should never happen
@@ -38,7 +38,17 @@ public class PersonRepository {
                     return null;
             }
         }
-        return result;
+        return countByGender;
+    }
+
+    public ArrayList<Person> getPersonsByFavoriteDayOfWeek(DaysOfWeek dayOfWeek){
+        ArrayList<Person> personWithSameFavoriteDay = new ArrayList<>();
+        for (Person person : persons) {
+            if(person.favoriteDay().equals(dayOfWeek)){
+                personWithSameFavoriteDay.add(person);
+            }
+        }
+        return personWithSameFavoriteDay;
     }
 
     //Boiler Plate Code
