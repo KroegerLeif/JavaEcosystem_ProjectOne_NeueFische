@@ -6,7 +6,7 @@ Einige zusätzliche Aufgaben zum Java-Kurs.
 ## Enumeration
 Erstellung von einem Wochentag als Enumeration. Sowie deren Aufrufe.
 Speicherung in einer Repro Datei
-Erstellung von einer Person Enum die eine Person darstellt und Wochentag als Enum enthält
+Erstellung von einer Person Record die eine Person darstellt und Wochentag als Enum enthält
 
 ### Bonus
 Person enthält jetzt Gender und es lässt sich im Repro zählen wie viele Pesonen pro Gender da sind.
